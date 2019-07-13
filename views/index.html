@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>kp</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/index.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .wrap{
+            margin: 0 auto;
+            padding-top: 44px;
+            padding-left: 106px;
+        }
+        /*头部*/
+        .headRadius{
+            width: 190px;
+            height:172px;
+            background: cornflowerblue;
+            border:1px solid black;
+            border-radius: 120px;
+            box-shadow: 0px 0px 6px 0px rgba(0,0,0,5);/*设置阴影*/
+ 
+        }
+ 
+        /*眼睛*/
+        .eye{
+            width: 40px;
+            height:45px;
+            position:absolute;
+            margin-top: 23px;
+            background: white;
+            border:1px solid black;
+            border-radius: 130px;
+            box-shadow: 0px 0px 4px 0px rgba(0,0,0,5);/*设置阴影*/
+            z-index: 20;
+        }
+        .eye1{
+            margin-left: 53px;
+        }
+        .eye2{
+            margin-left: 93px;
+        }
+        /*眼球*/
+        .eyeball{
+            width:16px;
+            height:16px;
+            position: absolute;
+            margin-left: 9px;
+            margin-top:20px;
+            background: black;
+            border-radius: 120px;
+            animation: wave 0.5s infinite;/*动画调用*/
+            transform-origin: center bottom;/*旋转中心点*/
+        }
+        /*动画效果定义*/
+        @keyframes wave {
+            0%{
+                transform: rotate(-6deg);
+            }
+            50%{
+                transform: rotate(6deg);
+            }
+            100%{
+                transform: rotate(-6deg);
+            }
+        }
+        .eyeball_in{
+            width: 5px;
+            height:5px;
+            position: absolute;
+            margin-top: 7px;
+            margin-left: 6px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 0px 9px 0px rgba(255,255,255,5);/*设置阴影*/
+        }
+        /*脸*/
+        .face{
+            width: 155px;
+            height:128px;
+            position: absolute;
+            margin-top: 40px;
+            margin-left: 16px;
+            background: white;
+            border:1px solid black;
+            border-radius: 120px;
+            box-shadow: 0px 0px 6px 0px rgba(0,0,0,5);/*设置阴影*/
+            z-index: 4;
+        }
+        /*鼻子*/
+        .nose{
+            width:20px;
+            height: 20px;
+            position: absolute;
+            margin-top: 24px;
+            margin-left: 65px;
+            background: radial-gradient(white 1%,red);
+            box-shadow: 0px 0px 4px 0px rgba(0,0,0,5);/*设置阴影*/
+            border-radius: 20px;
+            border:1px solid black;
+        }
+        /*鼻子下面的竖线*/
+        .nose_vertical{
+            width: 2px;
+            height: 56px;
+            background: black;
+            margin-top:45px;
+            margin-left:75px;
+        }
+        /*嘴巴*/
+        .mouth{
+            width:120px;
+            height:120px;
+            position: absolute;
+            margin-top:21px;
+            margin-left: 33px;
+            background: transparent;
+            /*background: pink;*/
+            border-radius: 150px;
+            border-top: 1px solid transparent;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+            border-bottom: 2px solid black;
+            z-index: 5;
+        }
+        /*胡须*/
+        .whisker{
+            width: 2px;
+            height: 40px;
+            position: absolute;
+            background: black;
+            box-shadow: 0px 0px 1px 0px rgba(0,0,0,5);/*设置阴影*/
+            z-index: 5;
+        }
+        .w1{
+            margin-top: 65px;
+            margin-left: 45px;
+            transform: rotate(115deg);/*倾斜角度*/
+        }
+        .w2{
+            margin-top: 80px;
+            margin-left: 42px;
+            transform: rotate(90deg);
+            /*-webkit-box-reflect: right 50px;!*靠右50px形成对称*!*/
+        }
+        .w3{
+            margin-top: 95px;
+            margin-left: 44px;
+            transform: rotate(65deg);
+        }
+        .w4{
+            margin-top: 65px;
+            margin-left: 140px;
+            transform: rotate(65deg);
+        }
+        .w5{
+            margin-top: 80px;
+            margin-left: 143px;
+            transform: rotate(90deg);
+        }
+        .w6{
+            margin-top: 95px;
+            margin-left: 140px;
+            transform: rotate(115deg);
+        }
+        /*领带*/
+        .necktie{
+            width: 118px;
+            height: 11px;
+            position: absolute;
+            margin-top: 158px;
+            margin-left: 34px;
+            background: crimson;
+            border-radius: 10px;
+            border:2px solid black;
+            box-shadow: 0px 0px 6px 0px rgba(0,0,0,5);/*设置阴影*/
+            z-index: 5;
+        }
+        /*勋章*/
+        .medal{
+            width:22px;
+            height:22px;
+            position: absolute;
+            margin-top: 163px;
+            margin-left: 83px;
+            background: gold;
+            border-radius: 20px;
+            border:1px solid black;
+            box-shadow: 0px 0px 6px 0px rgba(0,0,0,5);/*设置阴影*/
+            animation: wave 1s infinite;/*动画调用*/
+            transform-origin: center top;/*旋转中心点*/
+            z-index: 6;
+        }
+        /*勋章上的线*/
+        .line{
+            height:1px;
+            position: absolute;
+            background: black;
+        }
+        .L1{
+            width: 20px;
+            margin-top: 5px;
+            margin-left: 1px;
+        }
+        .L2{
+            width: 22px;
+            margin-top: 7px;
+        }
+        /*勋章上的小黑圆点*/
+        .blackCir{
+            width:7px;
+            height:7px;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 7px;
+            background: black;
+            border-radius: 120px;
+        }
+        /*勋章上的第三条线*/
+        .line3{
+            width: 2px;
+            height:6px;
+            position: absolute;
+            margin-top: 16px;
+            margin-left: 9.5px;            /*强迫症很头疼*/
+            background: black;
+        }
+        /*左边袖子*/
+        .leftSleeve{
+            width: 29px;
+            height:58px;
+            position: absolute;
+            margin-top: 150px;
+            margin-left: 25px;
+            background: cornflowerblue;
+            border-radius: 60px 0px 12px 12px;
+            border:1px solid black;
+            transform: rotate(58deg);/*倾斜角度*/
+            z-index: 1;
+        }
+        /*右边袖子*/
+        .rightSleeve{
+            width: 29px;
+            height:58px;
+            position: absolute;
+            margin-top: 150px;
+            margin-left: 135px;
+            background: cornflowerblue;
+            border-radius: 12px 12px 0px 60px;
+            border:1px solid black;
+            transform: rotate(120deg);
+            z-index: 1;
+        }
+        /*衣服中间矩形*/
+        .clothes{
+            width: 110px;
+            height: 70px;
+            position: absolute;
+            margin-top: 190px;
+            margin-left: 40px;
+            background: cornflowerblue;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            z-index: 2;
+        }
+        /*衣服中间的大白圆*/
+        .Circular{
+            width: 90px;
+            height:90px;
+            position: absolute;
+            margin-top: 145px;
+            margin-left: 50px;
+            background: white;
+            border: 1px solid black;
+            border-radius: 120px;
+            z-index: 3;
+        }
+        /*肚子中间半圆*/
+        .midCircular{
+            width: 70px;
+            height:35px;
+            position: absolute;
+            margin-top: 45px;
+            margin-left: 10px;
+            border-radius: 0px 0px 100px 100px;/*半圆*/
+            background: white;
+            border: 1px solid black;
+ 
+        }
+        /*手*/
+        .hand{
+            width:34px;
+            height:34px;
+            position: absolute;
+            border-radius: 17px;
+            background: white;
+            border: 1px solid black;
+            box-shadow: 0px 0px 6px 0px rgba(0,0,0,5);/*设置阴影*/
+            animation: wave 2.5s infinite;/*动画调用*/
+            transform-origin: center top;/*旋转中心点*/
+            z-index: 2;
+        }
+        .leftHand{
+            margin-top: 179px;
+            margin-left: -7px;
+        }
+        .rightHand{
+            margin-top: 179px;
+            margin-left: 162px;
+        }
+        /*脚*/
+        .foot{
+            width: 72px;
+            height:18px;
+            position: absolute;
+            background: white;
+            border-radius: 18px 13px 13px 8px;
+            border: 1px solid black;
+            box-shadow: 0px 0px 9px 0px rgba(0,0,0,5);/*设置阴影*/
+            animation: wave 2s infinite;/*动画调用*/
+            transform-origin: center right;/*旋转中心点*/
+            z-index: 4;
+        }
+        .leftFoot{
+            margin-top: 250px;
+            margin-left: 22px;
+        }
+        .rightFoot{
+            margin-top: 250px;
+            margin-left: 97px;
+        }
+        /*脚上的小圆*/
+        .cirOnFoot{
+            width: 20px;
+            height:20px;
+            position: absolute;
+            margin-top: 240px;
+            margin-left: 85px;
+            background: white;
+            border-radius: 12px;
+            border-top: 2px solid black;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-bottom: 1px solid white;
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-group">
+        <div class="page page-current">
+            <!-- 标题栏 -->
+            <header class="bar bar-nav">
+                <a class="icon icon-me pull-left open-panel"></a>
+                <h1 class="title">用户:阿毛</h1>
+            </header>
+            <!-- 这里是页面内容区 -->
+            <div class="content">
+                <div class="wrap">
+    <!--头部-->
+    <div class="headRadius">
+        <!--第一个眼睛-->
+        <div class=" eye eye1">
+            <div class="eyeball">
+                <div class="eyeball_in"></div>
+            </div><!--眼球-->
+        </div>
+        <!--第二个眼睛-->
+        <div class=" eye eye2">
+            <div class="eyeball">
+                <div class="eyeball_in"></div>
+            </div><!--眼球-->
+        </div>
+        <!--脸-->
+        <div class="face">
+            <div class="nose"></div><!--鼻子-->
+            <div class="nose_vertical"></div><!--鼻子下面的竖线-->
+        </div>
+        <div class="mouth"></div><!--嘴巴-->
+        <!--胡须-->
+        <div class="whisker w1"></div>
+        <div class="whisker w2"></div>
+        <div class="whisker w3"></div>
+        <div class="whisker w4"></div>
+        <div class="whisker w5"></div>
+        <div class="whisker w6"></div>
+        <!--领带-->
+        <div class="necktie"></div>
+        <!--勋章-->
+        <div class="medal">
+            <!--勋章上的线-->
+            <div class="line L1"></div>
+            <div class="line L2"></div>
+            <!--勋章上的小黑圆点-->
+            <div class="blackCir"></div>
+            <div class="line3"></div>
+        </div>
+ 
+        <!--衣服-->
+        <div class="leftSleeve"></div>
+        <div class="rightSleeve"></div>
+        <div class="clothes"></div>
+ 
+        <!--手-->
+        <div class="hand leftHand"></div>
+        <div class="hand rightHand"></div>
+        <!--衣服上中间的圆-->
+        <div class="Circular">
+            <!--衣服上中间的半圆-->
+            <div class="midCircular"></div>
+        </div>
+ 
+        <!--脚-->
+        <div class="foot leftFoot"></div>
+        <div class="foot rightFoot"></div>
+        <!--脚上的圆-->
+        <div class="cirOnFoot"></div>
+    </div>
+</div>
+<!--                 <div class="content-block">
+                    <p><a href="#" class="button button-fill" id="queryUser">查询</a></p>
+                </div>
+                <div id="userInfo">
+                    <div class="content-block-title">用户列表</div>
+                    <div class="list-block">
+                        <ul class="userList">
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">商品名称</div>
+                                    <div class="item-after">杜蕾斯</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+    <script type="text/javascript" src='../javascripts/index.js'></script>
+</body>
+
+</html>
